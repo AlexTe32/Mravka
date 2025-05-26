@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Langton's Ant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Langton's Ant</h1>
+  <div class="flex-container">
+
+    <div class="sidebar">
+
+      <button id="startBtn">Start Simulation</button>
+      <button id="stopBtn">Stop Simulation</button>
+
+      <label>White Cell Color:
+        <input type="color" id="whiteColorPicker" value="#ffffff">
+      </label>
+
+      <label>Black Cell Color:
+        <input type="color" id="blackColorPicker" value="#000000">
+      </label>
+
+      <label>Speed:
+        <input type="range" id="speedSlider" min="1" max="100" value="10">
+        <span id="speedValue">10</span> steps/frame
+      </label>
+    </div>
+
+    <canvas id="antCanvas" width="1000" height="1000"></canvas>
+
+    <script src="mravka.js"></script>
+  </div>
+</body>
+</html>
