@@ -3,6 +3,9 @@ const ctx = canvas.getContext("2d");
 
 const stopBtn = document.getElementById("stopBtn");
 const startBtn=document.getElementById("startBtn");
+const resetBtn = document.getElementById("resetBtn");
+
+const speedDisplay= document.getElementById("speedValue");
 
 let running = false;
 
@@ -47,6 +50,7 @@ function step() {
 }
 
 function animate() {
+    speedDisplay.textContent = speedSlider.value;
     if (!running) return;
 
     const speed = parseInt(speedSlider.value, 10);
@@ -64,6 +68,17 @@ startBtn.addEventListener("click", () => {
 
 stopBtn.addEventListener("click", () => {
     running = false;
+});
+
+resetBtn.addEventListener("click", () => {
+    for (let row = 0; row < gridSize; row++) {
+        grid[row].fill(0);
+    }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    x = Math.floor(gridSize / 2);
+    y = Math.floor(gridSize / 2);
+    dir = 0;
+    drawCell(x, y, false); // initial cell
 });
 
 animate();

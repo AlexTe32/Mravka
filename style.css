@@ -15,7 +15,7 @@ h1{
 .flex-container {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .sidebar {
@@ -24,6 +24,30 @@ h1{
   flex-direction: column;
   justify-content: space-between;
   max-width: 300px;
+}
+
+.sidebar button {
+  padding: 10px 0px;
+  font-size: 20px;
+  margin: 15px 0px;
+  border: none;
+  background: none;
+}
+
+.sidebar button:hover {
+  background: #c8c8ff;
+}
+
+.sidebar button:active {
+  background: #b4b4e6
+}
+.sidebar label:first-of-type {
+  margin-top: 50px;
+}
+
+.sidebar label {
+  font-size: 18px;
+  margin: 10px 0px;
 }
 
 canvas {
